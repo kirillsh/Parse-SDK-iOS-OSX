@@ -59,6 +59,7 @@
 #import "PFTaskQueue.h"
 #import "ParseInternal.h"
 #import "Parse_Private.h"
+#import "PFPolygon.h"
 
 /**
  Checks if an object can be used as a value for PFObject.
@@ -69,7 +70,7 @@ static void PFObjectAssertValueIsKindOfValidClass(id object) {
     dispatch_once(&onceToken, ^{
         classes = @[ [NSDictionary class], [NSArray class],
                      [NSString class], [NSNumber class], [NSNull class], [NSDate class], [NSData class],
-                     [PFObject class], [PFFile class], [PFACL class], [PFGeoPoint class] ];
+                     [PFObject class], [PFFile class], [PFACL class], [PFGeoPoint class], [PFPolygon class] ];
     });
 
     for (Class class in classes) {
